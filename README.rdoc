@@ -1,0 +1,15 @@
+install gem'kaminiri'
+
+in controller edit @product=Product.new as
+
+def index
+    @products = Product.page(params[:page]).per(3)
+  end
+in per(3) you can put number of articles to be listed
+
+and in index page just add
+
+<%= paginate @products %>
+
+thats all you can also edit link design using 
+rails generate kaminari:views
